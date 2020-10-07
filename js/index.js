@@ -12,10 +12,14 @@ const productsUrl = baseUrl + "products";
     container.innerHTML = "";
 
     json.forEach(function (product) {
-      container.innerHTML += `<a class="product" href="detail.html?id=${product.id}">
+      container.innerHTML += `<div class="product"><a  href="detail.html?id=${product.id}">
                                         <h4>${product.name}</h4>
                                         <p>Price: ${product.price}</p>
-                                    </a>`;
+                                        <p>Descrition: ${product.description}</p>
+                                        
+                                    </a> <i class="fas fa-minus-circle"></i></div>`;
+
+      console.log(product);
     });
   } catch (error) {
     console.log(error);
